@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 from libs.parse import Parse
+os.chdir(os.path.dirname(sys.argv[0])) # so that workdir = this dir
 
 config = object()
 try:

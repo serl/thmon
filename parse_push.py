@@ -3,6 +3,7 @@
 from libs.parse import Parse
 import config, sys, os
 from datetime import datetime
+os.chdir(os.path.dirname(sys.argv[0])) # so that workdir = this dir
 
 parse = Parse(config.application_id, config.rest_api_key)
 parse.set_session_token(config.session_token)
