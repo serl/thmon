@@ -7,6 +7,6 @@ cd $(dirname $0)
 LOCK='.lock'
 if mkdir "$LOCK" 2>/dev/null; then
 	echo ex
-	./parse_push.py
+	./thingspeak_push.py
 	rmdir "$LOCK"
 fi
