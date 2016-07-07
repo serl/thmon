@@ -14,7 +14,7 @@ if not hasattr(config, 'limit_uploads'):
 if not hasattr(config, 'delay'):
 	config.delay = 16
 
-cached = [int(f) for f in os.listdir('./cache') if f.isdigit()][-config.limit_uploads:]
+cached = sorted([int(f) for f in os.listdir('./cache') if f.isdigit()])[-config.limit_uploads:]
 for timestamp in cached:
 	contents = ''
 	filename = './cache/{}'.format(timestamp)
