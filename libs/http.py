@@ -15,7 +15,7 @@ class HTTP:
     def call(self, endpoint, verb='GET', params={}, input_headers={}):
         headers = self.default_headers.copy()
         headers.update(input_headers)
-        connection = httplib.HTTPSConnection('api.thingspeak.com', 443)
+        connection = httplib.HTTPSConnection('api.thingspeak.com', 443, timeout=120)
         body = ''
         connection.connect()
         url = '/{}'.format(endpoint)
