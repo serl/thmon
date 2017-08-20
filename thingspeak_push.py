@@ -27,14 +27,15 @@ def main():
         filename = './cache/{}'.format(timestamp)
         with open(filename, 'r') as cnts:
             contents = cnts.read().strip()
-        (temperature, humidity) = map(float, contents.split(' '))
+        (temperature, humidity) = contents.split(' ')
         isodate = datetime.utcfromtimestamp(timestamp).isoformat()
         error = None
         data_to_send = {
             'field1': temperature, 'field2': humidity, 'created_at': isodate}
-        if humidity >= 50:
+        if float(humidity) >= 50:
             # using approximated formula that works only in these conditions
-            data_to_send['field3'] = temperature - ((100 - humidity) / 5)
+            dew_point = float(temperature) - ((100 - float(humidity)) / 5)
+            data_to_send['field3'] = "{:.1f}".format(dew_point)
         try:
             result = http.call('update', 'POST', data_to_send)
             if result == '0':
