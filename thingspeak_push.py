@@ -14,10 +14,10 @@ def main():
 
     http = HTTP({'THINGSPEAKAPIKEY': config.API_KEY})
 
-    if not hasattr(config, 'limit_uploads'):
+    if not hasattr(config, 'LIMIT_UPLOADS'):
         config.LIMIT_UPLOADS = 5
 
-    if not hasattr(config, 'delay'):
+    if not hasattr(config, 'DELAY'):
         config.DELAY = 16
 
     whole_cache = [int(f) for f in os.listdir('./cache') if f.isdigit()]
