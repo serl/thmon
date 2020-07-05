@@ -13,9 +13,8 @@ def main():
     for i in range(number_of_reads):
         val = Adafruit_DHT.read_retry(Adafruit_DHT.AM2302, 4)
         if val == (None, None):
-            print 'TEMPERATURE= HUMIDITY='
             sys.exit(1)
-        f_val = 'TEMPERATURE={0:0.1f} HUMIDITY={1:0.1f}'.format(val[1], val[0])
+        f_val = '{0:0.1f} {1:0.1f}'.format(val[1], val[0])
         print >> sys.stderr, "measure {}: {}".format(i + 1, f_val)
         sleep(pause_between_reads)
     print f_val

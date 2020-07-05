@@ -1,9 +1,7 @@
-#!/bin/bash
+#!/bin/bash -e
 
-cd $(dirname $0)
+cd "$(dirname "$0")"
 
 values=$(sudo ./libs/read_value.py)
-[ "$values" ] || exit 1
-export $values
-([ $TEMPERATURE ] && [ $HUMIDITY ]) || exit 2
-echo "$TEMPERATURE $HUMIDITY" > cache/$(date +%s)
+[[ $values ]] || exit 1
+echo "$values" > "cache/$(date +%s)"
