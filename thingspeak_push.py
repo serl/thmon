@@ -27,7 +27,10 @@ def main():
         filename = './cache/{}'.format(timestamp)
         with open(filename, 'r') as cnts:
             contents = cnts.read().strip()
-        (temperature, humidity) = contents.split(' ')
+        try:
+            (temperature, humidity) = contents.split(' ')
+        except ValueError:
+            continue
         isodate = datetime.utcfromtimestamp(timestamp).isoformat()
         entry = {
             'field1': temperature, 'field2': humidity, 'created_at': isodate}
