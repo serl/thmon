@@ -1,6 +1,5 @@
 # thmon
 
-
 ## Installation
 
 On a Raspberry Pi:
@@ -17,12 +16,10 @@ source .venv/bin/activate
 CFLAGS="-fcommon" pip install -r requirements.txt
 ```
 
-
 ## Usage
 
 Activate the venv with `source .venv/bin/activate`, then run `python dht22_read.py`.
-It wîll try to read the values from the sensor, gives 'TEMP HUMIDITY' on stdout and some debug data on stderr.
-
+It will try to read the values from the sensor, gives 'TEMP HUMIDITY' on stdout and some debug data on stderr.
 
 ## Pushing to ThingSpeak
 
