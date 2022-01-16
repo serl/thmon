@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 
-import sys
 import os
 from datetime import datetime
-from time import sleep
-import config
+
 import requests
+
+import config
 
 os.chdir(os.path.dirname(__file__))  # so that workdir = this dir
 
@@ -20,7 +20,6 @@ def main():
     cached = sorted(whole_cache)[0 : config.TS_BULK_UPDATE_SIZE]
     entries = []
     files = []
-    error = None
     for timestamp in cached:
         contents = ""
         filename = "./cache/{}".format(timestamp)

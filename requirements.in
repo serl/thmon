@@ -4,3 +4,5 @@ adafruit-circuitpython-dht
 black
 isort
 flake8
+flake8-black
+flake8-isort

@@ -2,8 +2,9 @@
 
 import sys
 from time import sleep
-import board
+
 import adafruit_dht
+import board
 
 dhtDevice = adafruit_dht.DHT22(board.D4)
 max_number_of_reads = 20  # max reads attempted before exit(1)
