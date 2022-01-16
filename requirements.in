@@ -1,0 +1,4 @@
+requests
+adafruit-circuitpython-dht
+
+-r requirements_dev.txt

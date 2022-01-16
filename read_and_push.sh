@@ -1,12 +1,14 @@
 #!/bin/bash
 
-cd $(dirname $0)
+cd "$(dirname "$0")"
 
-./read_value.sh
+source .venv/bin/activate
+
+values=$(python dht22_read.py) &&
+    echo "$values" > "cache/$(date +%s)"
 
 LOCK='.lock'
 if mkdir "$LOCK" 2>/dev/null; then
-    echo ex
-    ./thingspeak_push.py
+    python thingspeak_push.py
     rmdir "$LOCK"
 fi
