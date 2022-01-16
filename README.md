@@ -1,12 +1,24 @@
 # thmon
 
+## Installing
+
+On a Raspberry Pi:
+
+```sh
+# Install system dependencies
+sudo apt-get install libgpiod2
+
+# Use prepare and load the venv
+python3 -m venv .venv
+source .venv/bin/activate
+
+# Install dependencies
+CFLAGS="-fcommon" pip install -r requirements.txt
+```
+
 ## Read values from the sensor
 
 Run `read_value.sh`, it will (hopefully) read the value from the sensor and write it to a temporary file in the `cache` directory.
-
-Depends on `Adafruit_Python_DHT`; go and read readme to install (hint: `sudo apt install python-pip && sudo pip install Adafruit_DHT`).
-
-It won't write to stdout, check return value for success/failure.
 
 
 ## Pushing to ThingSpeak

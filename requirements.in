@@ -1,0 +1,6 @@
+requests
+adafruit-circuitpython-dht
+
+black
+isort
+flake8
