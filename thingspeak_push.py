@@ -3,9 +3,8 @@
 import os
 from datetime import datetime
 
-import requests
-
 import config
+import requests
 
 os.chdir(os.path.dirname(__file__))  # so that workdir = this dir
 
