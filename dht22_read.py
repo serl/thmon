@@ -7,7 +7,7 @@ import adafruit_dht
 import board
 
 dhtDevice = adafruit_dht.DHT22(board.D4)
-max_number_of_reads = 20  # max reads attempted before exit(1)
+max_number_of_reads = 50  # max reads attempted before exit(1)
 good_reads_required = 2  # take the n-th successful read and stop trying
 pause_between_reads = 3  # in seconds
 
