@@ -6,8 +6,10 @@ cd "$(dirname "$0")"
 # shellcheck source=/dev/null
 source .venv/bin/activate
 
-values=$(python dht22_read.py) &&
+if values=$(python dht22_read.py); then
     echo "$values" > "cache/$(date +%s)"
+    echo "$values" > "cache/latest"
+fi
 
 LOCK='.lock'
 if mkdir "$LOCK" 2>/dev/null; then
