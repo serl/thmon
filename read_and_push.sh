@@ -1,7 +1,9 @@
 #!/bin/bash
+set -e
 
 cd "$(dirname "$0")"
 
+# shellcheck source=/dev/null
 source .venv/bin/activate
 
 values=$(python dht22_read.py) &&
