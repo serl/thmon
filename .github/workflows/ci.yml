@@ -1,9 +1,13 @@
-name: Python package
+name: Python checks
 
-on: [push]
+on:
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
 
 jobs:
-    checks:
+    flake8:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
