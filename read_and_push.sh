@@ -12,7 +12,7 @@ if values=$(python dht22_read.py); then
 fi
 
 LOCK='.lock'
-if mkdir "$LOCK" 2>/dev/null; then
-    python thingspeak_push.py
-    rmdir "$LOCK"
-fi
+mkdir "$LOCK" 2>/dev/null
+trap 'rmdir $LOCK' EXIT
+
+python thingspeak_push.py
