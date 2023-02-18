@@ -1,5 +1,10 @@
 # thmon
 
+## _Deprecated_
+
+With the latest updates, the successful read rate from DHT22 is quite bad.
+I'm planning to attach my sensor to an ESP chip and use it with Tasmota or something.
+
 ## Installation
 
 On a Raspberry Pi:
